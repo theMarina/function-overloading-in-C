@@ -12,10 +12,11 @@ float maxf(float x, float y)
 	return (x>y)?x:y;
 }
 
+char important_num[] = {0xa,0xa,0xa,0xa };
+
 #define IS_FLOAT(TYPE) ({\
-	int x = 0x0a0a0a0a;\
 	TYPE* p;\
-	p = (typeof(p))&x;\
+	p = (typeof(p))&important_num;\
 	int num = (int)(*p * 3.0);\
 	num == 0;\
 })
