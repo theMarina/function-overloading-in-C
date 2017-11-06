@@ -10,7 +10,8 @@ The output will be:
 in max() for int
 max (should be 3) = 3
 in max() for float
-max (should be 6.5) = 6.500000```
+max (should be 6.5) = 6.500000
+```
 
 
 == explanation ==
