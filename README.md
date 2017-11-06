@@ -18,11 +18,11 @@ max (should be 6.5) = 6.500000
 The major problem to overcome, is that we need to decide which function to call in some point of time.
 We cannot know types in preprocessing time, only in compile time.
 I have no intention to change the compiler, so compile time is also out.
-Which means I can only determine the type during runtime. (Note that the check is simple enough to be optimized by the compiler to not be performed during runtime, if used `gcc -O3 prog.c`)
+Which means I can only determine the type during runtime. (Note that the check is simple enough to be optimized by the compiler to not be performed during runtime)
 
 Dirty tricks I used:
 1. A useful syntax for macros is that if I have an expression of this form: ({1, 2, 3, 4}), its value will be the last argument, e,g 4.
-2. 0x0a0a0a0a == float(0), but not equals to int(0)
+2. The array char[] x = {0xa, 0xa, 0xa, 0xa} equals to float(0), but not equals to int(0)
 3. typeof(A) will be evaluated correctly during compile time to how the type of A
 
 I tested it on my clean Ubuntu 16.04. If you having any trouble reproducing, the output of `gcc -v` is:
